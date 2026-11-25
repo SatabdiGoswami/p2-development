@@ -1,0 +1,10 @@
+node_modules/
+test-results/
+playwright-report/
+__pycache__/
+*.pyc
+/P2-work/dist/
+/p2/starter/dist/
+.env
+.env.*
+!.env.example

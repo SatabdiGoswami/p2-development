@@ -1,0 +1,217 @@
+
+> p2-playable-typescript-game@1.0.0 check:rules
+> npm run build && node --test tests/fixtures.test.mjs tests/learner.test.mjs
+
+
+> p2-playable-typescript-game@1.0.0 build
+> tsc -p tsconfig.json
+
+✖ F01 Start: initial state from the reference board (1.8828ms)
+✖ F02 East from the start is accepted and costs one move (0.2559ms)
+✖ F03 Moving into the wall is rejected and state is unchanged (0.122ms)
+✖ F04 Moving off the board edge is rejected and state is unchanged (0.2092ms)
+✖ F05 Reaching the treasure scores ten and records it once (0.1084ms)
+✖ F06 Reaching the exit holding the treasure wins (0.1039ms)
+✖ F07 Final-move win: winning is checked before the zero-budget loss (0.0989ms)
+✖ F08 Spending the last move without winning loses (0.0748ms)
+✖ F09A Actions after a win are rejected and state is unchanged (0.1032ms)
+✖ F09B Actions after a loss are rejected and state is unchanged (0.1452ms)
+✖ F10A An unknown direction is rejected as invalid (0.112ms)
+✖ F10B A missing direction is rejected as invalid (0.1012ms)
+✖ F11 Reaching the exit without the treasure does not win (0.4997ms)
+﹣ R01 Start: two rounds, no score (0.4854ms) # src/genre.ts selects "treasure"
+﹣ R02 A hit consumes one round and scores one (0.1484ms) # src/genre.ts selects "treasure"
+﹣ R03 A miss consumes one round without score (0.0701ms) # src/genre.ts selects "treasure"
+﹣ R04 Using the last round completes the range (0.0627ms) # src/genre.ts selects "treasure"
+﹣ R05A An unknown event is rejected and state is unchanged (0.0732ms) # src/genre.ts selects "treasure"
+﹣ R05B Events after completion are rejected (0.1291ms) # src/genre.ts selects "treasure"
+✖ AI-assisted regression: revisiting collected treasure does not score twice (1.5522ms)
+✖ AI-assisted regression: public start retains treasure and wins on the sixth move (0.1785ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 0
+ℹ fail 15
+ℹ cancelled 0
+ℹ skipped 6
+ℹ todo 0
+ℹ duration_ms 180.5259
+
+✖ failing tests:
+
+test at tests\fixtures.test.mjs:37:5
+✖ F01 Start: initial state from the reference board (1.8828ms)
+  Error: initialState is not implemented yet (src/rules.ts); received config "reference"
+      at Module.initialState (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:10:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:40:38)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F02 East from the start is accepted and costs one move (0.2559ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F03 Moving into the wall is rejected and state is unchanged (0.122ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F04 Moving off the board edge is rejected and state is unchanged (0.2092ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F05 Reaching the treasure scores ten and records it once (0.1084ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F06 Reaching the exit holding the treasure wins (0.1039ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F07 Final-move win: winning is checked before the zero-budget loss (0.0989ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F08 Spending the last move without winning loses (0.0748ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F09A Actions after a win are rejected and state is unchanged (0.1032ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F09B Actions after a loss are rejected and state is unchanged (0.1452ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F10A An unknown direction is rejected as invalid (0.112ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F10B A missing direction is rejected as invalid (0.1012ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\fixtures.test.mjs:37:5
+✖ F11 Reaching the exit without the treasure does not win (0.4997ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at Module.evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/fixtures.test.mjs:46:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tests\learner.test.mjs:18:1
+✖ AI-assisted regression: revisiting collected treasure does not score twice (1.5522ms)
+  Error: evaluate is not implemented yet (src/rules.ts); received action "move"
+      at evaluate (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:13:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/learner.test.mjs:28:26)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tests\learner.test.mjs:36:1
+✖ AI-assisted regression: public start retains treasure and wins on the sixth move (0.1785ms)
+  Error: initialState is not implemented yet (src/rules.ts); received config "reference"
+      at initialState (file:///C:/Users/9810zs/Downloads/Project/P2-work/dist/rules.js:10:11)
+      at TestContext.<anonymous> (file:///C:/Users/9810zs/Downloads/Project/P2-work/tests/learner.test.mjs:37:15)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+Command exited with code 1
