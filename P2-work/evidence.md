@@ -110,6 +110,24 @@ Screenshots were captured in separate subsequent runs.
 - Actual game-data GET: HTTP 200, board `reference`, response header `X-Lab-Release: playable-01`.
 - Development preview remains separate at port 4182. No cloud, container, Kubernetes, BP or GitHub submission is claimed for P2.
 
+## AI-assisted graphical frontend update (2026-11-25)
+
+The user requested a playable-looking frontend after the original submission. These changes are in
+the Git checkout's `P2-work`, not the separate original workspace copy. Earlier results above describe
+the original text-only implementation and retained release; they have not been replaced or reinterpreted.
+
+- Added Treasure Trail / Mosswood Ruins: custom inline SVG board, explorer, relic, ruins and exit, with Lucide controls, visible counters and objective progress.
+- Added adjacent-tile input and arrow/WASD keys through the existing controller/rules/event path. The pure rules, supplied helpers, server and fixtures remain unchanged.
+- Start on the map is disabled until verified data arrives; completion disables movement and offers replay. Keyboard input is ignored before start and after completion.
+- Updated the source HTML/CSS and bundled the browser entrypoint with esbuild. Artwork/icons are self-contained, with no runtime CDN dependency.
+- Initial new graphical suite: seven passed. A later in-viewport assertion exposed a start control below the fold at 720px desktop height; a height-constrained layout corrected it. A screenshot exposed a missing Lucide CSS class; adding the hook restored intended sizing and contrast, with explicit browser assertions.
+- Full `npm test` using `P2_URL=http://127.0.0.1:4184`: 15 rule/regression tests passed, six range cases skipped, 17 browser tests passed. The seven new checks are AI-authored, not learner predictions.
+- Responsive checks: 1280, 390 and 320px widths, reduced-motion transitions disabled, no horizontal/text overflow. Standalone Chromium captures also checked 1280x720 and verified the map's start button was initially inside every viewport. No browser page errors were observed.
+- Screenshots: [desktop](verification/frontend-desktop.png), [short desktop](verification/frontend-short-desktop.png), [mobile](verification/frontend-mobile.png), [narrow mobile](verification/frontend-narrow.png). Original screenshots remain unchanged.
+- Graphical source process: <http://127.0.0.1:4184/>. `playable-01` and its inventory remain untouched and text-only; no new release or frontend commit/push is claimed here.
+
+This work is AI-assisted implementation and verification, not completion of the learner's personal evidence.
+
 ### Remaining learner requirements
 
 Personal W2.10 brief/plan reasoning, independent predictions and bounded changes, compiler demonstration,

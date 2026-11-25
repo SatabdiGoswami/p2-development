@@ -2,6 +2,9 @@
 
 Project 2 submission: a playable TypeScript treasure-hunt game with deterministic rules, browser
 controls, validated game-data loading, local event recording and a verified local release.
+The working source now includes **Treasure Trail**, an illustrated board with an animated explorer,
+clickable tiles, keyboard/direction-pad controls and visual progress. The retained `playable-01` artifact
+is the earlier text-only version, not the updated frontend.
 
 ## Submission Contents
 
@@ -28,8 +31,9 @@ an existing server on that port first or select a free port using `$env:PORT="41
 Local URLs in the evidence refer to the original verification session, not a public website.
 
 Verified on 2026-11-25: 15 rule/regression tests passed, six unselected range fixtures skipped,
-and all ten browser checks passed against both the source and the retained release.
-Desktop/mobile play and restart were checked at widths 1280, 390 and 320.
+and all 17 browser checks passed against graphical source. The retained release passed the ten original
+browser checks before the frontend update. Desktop/mobile play and restart were checked at widths
+1280, 390 and 320. The current graphical preview is <http://127.0.0.1:4184/>.
 
 To verify and run the release, from `P2-work` with Python and Node installed:
 
